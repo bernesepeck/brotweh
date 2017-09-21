@@ -1,0 +1,145 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Brotweh.ch</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Normalize CSS Sheets -->
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!--build:css css/styles.min.css-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!--endbuild-->
+    </head>
+    <body>
+        <header>
+            <!-- Navigations-Bar -->
+            <div class="navbar">
+                <a href="index.html"><img src="images/logo.svg" alt="logo"></a>
+                <button type="button" id="button-erfassen" class="button-new-entry" href="javascript:void(0);" onclick="toggleForm()"> + erfassen </button>
+                <!-- Navigations Overlay für Mobile Phone -->
+                <nav id="navoverlay" class="navmobile">
+                    <h2 class="title-menu">Menu</h2>
+                    <ul>
+                        <li><a href="map.html"> Suche </a></li>
+                        <li><a href="tipps.html"> Tipps </a></li>
+                        <li><a href="rezepte.html"> Rezepte </a></li>
+                    </ul>
+                    <h2 class="title-menu">Sprache</h2>
+                    <ul>
+                        <li><a href="de"> de </a></li>
+                        <li><a href="de"> fr </a></li>
+                        <li><a href="de"> it </a></li>
+                        <li><a href="de"> rm </a></li>
+                        <li><a href="de"> en </a></li>
+                    </ul>
+                </nav>
+                <!-- Hamburger Menu Mobile Phone -->
+                <a href="javascript:void(0);" onclick="toggleNav()">
+                    <div id="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </a>
+                <!-- Navigation für Desktop -->
+                <nav class="navdesktop">
+                    <ul>
+                        <li><a href="map.html"> Suche </a></li>
+                        <li><a href="tipps.html"> Tipps </a></li>
+                        <li><a href="rezepte.html"> Rezepte </a></li>
+                    </ul>
+                </nav>
+                <div class="language">
+                    <a href="de"> de </a>
+                    <a href="de"> fr </a>
+                    <a href="de"> it </a>
+                    <a href="de"> rm </a>
+                    <a href="de"> en </a>
+                </div>
+            </div>
+        </header>
+        <main>
+             <!-- Formular Erfassen -->
+            <div id="formoverlay">
+                <form action="#" class="form-new-entry">
+                    <input type="text" name="email" placeholder="Ihre E-Mailadresse">
+                    <input type="text" name="Name" placeholder="Name von Bäckerei">
+                    <input type="text" name="adress" placeholder="Adresse der Bäckerei">
+                    <textarea type="textarea" name="description" placeholder="Beschreibung der Bäckerei"></textarea>
+                    <button type="submit" class="button-submit-form"> Abschicken </button>
+                </form>
+            </div>
+            <!-- Searchbar -->
+            <div class="searchbar-container-subsite">
+                <form action="#" class="searchbar">
+                    <input type="text" name="suche" placeholder="Ihr Standort">
+                    <div>
+                        <button type="button" class="button-searchbar-gps"></button>
+                        <button type="submit" class="button-searchbar-submit"></button>
+                    </div>
+                </form>
+            </div>
+           
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9544.061213566623!2d-9.059733206622981!3d53.27134544791698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sch!4v1505723297079" frameborder="0" style="border:0" allowfullscreen>
+            </iframe>
+        </main>
+        <footer>
+            <div>
+                <a href="home.html"> brotweh.ch </a>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="kontakt.html"> Kontakt </a></li>
+                    <li><a href="impressum.html"> Impressum </a></li>
+                </ul>
+            </div>
+        </footer>
+        <!-- Script für Overlay Menu -->
+        <script>
+            function toggleNav() {
+                var navoverlay = document.getElementById("navoverlay");
+                var hamburger = document.getElementById("hamburger");
+                if (!navoverlay.offsetWidth == 0) {
+                    hamburger.className = "hamburger-close"
+                    navoverlay.className = "hamburger-close"
+                    //navoverlay.style.width ="0%"
+                }
+                else {
+                    hamburger.className = "hamburger-open"
+                    navoverlay.className = "hamburger-open"
+                    //navoverlay.style.width = "100%"
+                }
+            }
+            function toggleForm() {
+                var formoverlay = document.getElementById("formoverlay");
+                var button = document.getElementById("button-erfassen");
+                if (!formoverlay.offsetWidth == 0) {
+                    button.className = "form-close"
+                    formoverlay.className = "form-close"
+                    //navoverlay.style.width ="0%"
+                }
+                else {
+                    button.className = "form-open"
+                    formoverlay.className = "form-open"
+                    //navoverlay.style.width = "100%"
+                }
+            }
+        </script>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!--removeIf(production)-->
+        <script id="__bs_script__">
+            //<![CDATA[
+            document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+            //]]>
+        </script>
+        <!--endRemoveIf(production)-->
+    </body>
+</html>

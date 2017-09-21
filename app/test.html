@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+   <title>test</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+li {
+display: inline-block;
+width: 110px;
+height: 50px;
+background-color: tomato;
+margin-bottom:1px;
+border: 2px solid blue;
+}
+li.coming-soon {
+background-color:limegreen;
+display: none;
+}
+li.coming-soon:target { display: inline-block; }
+</style>
+</head>
+<body>
+<p><a href="#show">Sichtbar machen</a></p>
+<p><a href="#hide">Unsichtbar machen</a></p>
+<ul>
+<li>Startseite</li>
+<li>Produkte</li>
+<li id="show" class="coming-soon">Dienstleistungen</li>
+<li>Über uns</li>
+<li>Kontakt</li>
+</ul>
+</body>
+</html>

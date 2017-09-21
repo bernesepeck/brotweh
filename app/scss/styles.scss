@@ -1,0 +1,773 @@
+//Farben
+$color-buttonbackground: #FF0000;
+$color-contrast: #52331B;
+$color-highlight: #FFBF00;
+$color-font: #000000;
+$color-backgroundbasic: #ffffff;
+$color-formoutline: #e7e7e7;
+$color-iconbuttons: #f3f3f3;
+
+//Font
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Open+Sans');
+
+$ueberschriften: 'Oleo Script Swash Caps', cursive;
+$standardfont: sans-serif;
+
+@mixin font-link-cursive{
+    font-family: $ueberschriften;
+    font-size: 1em;
+}
+
+@mixin font-link-normal{
+    font-family: $standardfont;
+    font-size: 0.875em;
+}
+
+@mixin form-field {
+    border: 1px solid $color-formoutline;
+    box-shadow: 0px 1px 8px 0 rgba(195, 195, 195, 0.25);
+}
+
+@mixin button {
+        background-color: $color-buttonbackground;
+        color: $color-backgroundbasic;
+        border: 0;
+        border-radius: 4px;
+}
+//Breakpoints
+$smallbreakpoint: 1000px;
+$mediumbreakpoint: 1000px;
+$bigbreakpoint: 1200px;
+$widebreakpoint: 1600px;
+
+
+//Padding Seite
+@mixin padding {
+    padding: {
+        left: 15px;
+        right: 15px;
+    }
+}
+
+//Clearfix Class
+.clearfix:before,
+.clearfix:after {
+    content: " "; 
+    display: table; 
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: $color-font;
+    font-family: $standardfont;
+    padding: 0;
+    margin: 0;
+}
+
+a:hover {
+    color: $color-buttonbackground;
+}
+
+h1 {
+    font-family: $ueberschriften;
+    font-size: 2.25em;
+    margin: 0;
+
+}
+
+h2 {
+    font-family: $ueberschriften;
+    color: $color-contrast;
+    font-size: 1em;
+    padding-top: 2em;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    display: inline;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    border: 1px solid $color-formoutline;
+    @include padding;
+
+    //Logo
+    img {
+        width: 120px;
+        height: 60px;
+        position: relative;
+        top: 17.5px;
+        z-index: 10;
+    }
+
+    //Erfassen Button
+    #button-erfassen {
+        @include button();
+        height: 38px;
+        width: 110px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: auto;
+
+        &.form-open {
+            
+    }
+    }
+    
+    //Navigation Desktop
+    nav.navdesktop {
+        display: none;
+        align-self: center;  
+        margin-right: auto;
+        ul li a {
+            font-size: 1em;
+            text-transform: uppercase;
+            align-self: center;
+            font-weight: bold;
+            margin: 1em;
+        } 
+        ul li:nth-child(1) a {
+            margin-left: 4em;
+        }
+    }
+
+    //Sprachauswahl
+    .language  {
+        display: none;
+        align-self: center;
+        font-weight: bold;
+        line-height: 60px;
+    } 
+
+    .navbar-left {
+        display: flex;
+        
+    }
+}
+
+.title-menu {
+    font-family: $ueberschriften;
+    text-decoration: underline;
+    font-size: 2.25em;
+    padding: 50px 0 15px 0;
+    margin: 0;
+}
+
+#hamburger {
+    align-self: center;
+    margin-top: 16.5px;
+    margin-bottom: 16.5px;
+    margin-left: 20px;
+    div {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+        transition: transform .2s ease-out;
+    }
+
+    &.hamburger-open {
+        > div:first-child {
+             transform: translate(0, 11px) rotate(45deg) ;
+        }
+        > div:nth-child(2) {
+            opacity: 0;
+        }
+        > div:last-child {
+             transform: translate(0, -11px) rotate(-45deg) ;
+        }
+    }
+}
+
+#navoverlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    overflow: hidden;
+    background-color: $color-backgroundbasic;
+    text-align: center;
+    top: 60px;
+    left: 0;
+    transition: width opacity .2s ease-out;
+    z-index: 5;
+    a {
+         font-size: 1.5em;
+        font-weight: bold;
+        line-height: 1.67;
+    }
+    a:hover {
+        color: $color-buttonbackground;
+    }
+    ul:nth-of-type(1) li{
+        display: block;
+    }
+    &.hamburger-open {
+        width: 100%;
+        opacity: 100%;
+    }
+    &.hamburger-close {
+        width: 0%;
+        opacity: 0%;
+    }
+}
+
+.banner {
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        object-fit: cover;
+    }
+}
+
+.banner-subsite {
+    height: 300px;
+    position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    /*Container für Titel und Untertitel*/
+    div {
+        position: absolute;
+        color:white;
+        bottom: 0;
+        left: 0;
+        padding: 15px;
+        width: 100%;
+        background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0));
+        background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0));
+        background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0));
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.59) 60%, rgba(0, 0, 0, 0));
+
+        /*Untertitel*/
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.searchbar-container {
+    height: 72px;
+    border-bottom: 1px solid $color-formoutline;
+    padding: 15px;
+}
+
+.searchbar-container-subsite {
+    @extend .searchbar-container;
+    padding-top: 35px;
+    height: 92px;
+}
+
+.searchbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    @include form-field();
+    input {
+        width: 75%;
+        height: 100%;
+        border:none;
+        padding: 15px;
+    }
+    img {
+        width: 34px;
+        height: 34px;
+        color: $color-highlight;
+        padding: 6px;
+        border-radius: 4px;
+        margin: 3px 0 3px 0;
+    }
+    img:first-of-type {
+         background-color: $color-highlight;
+    }
+}
+
+.button-searchbar {
+    border: none;
+    border-radius: 4px;
+    padding: 6px;
+    margin: 3px 0 3px 0;
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+}
+
+.button-searchbar-gps {
+    @extend .button-searchbar;
+    background-image: url(/images/mylocation.svg);
+    background-color: $color-highlight;
+}
+.button-searchbar-submit {
+    @extend .button-searchbar;
+    background-image: url(/images/search.svg);
+    background-color: $color-backgroundbasic;
+}
+
+main {
+    display: inline-block;
+    width: 100%;
+}
+
+.main-subsite {
+    @extend main;
+    padding-top: 30px;
+
+    a {
+        @extend .section-link;
+        float: left !important;
+        padding: 15px;
+        margin: 0 !important;
+    }
+}
+
+
+
+section {
+    padding: 0 15px 0 15px;
+    p {
+        line-height: 1.75em;
+    }
+}
+
+.section-link {
+    font-weight: bold;
+        text-decoration: underline;
+        bottom: 10px;
+        right: 10px;
+        float: right; 
+        margin-top: 21px;
+}
+
+#formoverlay {
+    width: 0;
+    height: calc(100vh - 107px);
+    background-color: $color-backgroundbasic;
+    position: fixed;
+    overflow: hidden;
+    text-align: center;
+
+    &.form-open {
+        width: 100%;
+        opacity: 1;
+    }
+    &.form-close {
+        width: 0%;
+        opacity: 0;
+    }
+}
+
+.form-new-entry {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    input {
+        @include form-field();
+        width: auto;
+        margin: 15px;
+        padding: 15px;
+    }
+    [type="text"] {
+        height: 39px;
+        width: auto;
+    }
+
+    textarea {
+        height: 200px;
+        width: auto;
+        @include form-field;
+        padding: 15px;
+        margin: 15px;
+    }
+}
+
+.button-submit-form {
+    @include button();
+    height: 39px;
+    margin: 15px;
+}
+
+iframe {
+    width: 100%;
+    height: calc(100vh - 199px);
+}
+
+.section-translation {
+    padding: 0;
+}
+
+.section-translation-title-container {
+    padding: 1em;
+    select {
+        border: 0;
+        color: $color-highlight;
+        font-family: $ueberschriften;
+        font-size: 1.5em;
+    }
+    span {
+        font-family: $standardfont;
+        font-size: 1.2em;
+        font-weight: bold; 
+    }
+}
+
+.section-translation-definition-list {
+    background-color: $color-contrast;
+    color: $color-backgroundbasic;
+    width: 100%;
+    padding: 1em;
+    dt {
+        float: left;
+        clear: left;
+        width: 10.5em;
+        text-align: left;
+  }
+  dt::after {
+      content: ":";
+  }
+  dd {
+      margin: 0 0 0 110px;
+      padding: 0 0 0.5em 0;
+      font-weight: bold;
+  }
+}
+
+.title-subsite {
+        color: $color-backgroundbasic;
+        font-size: 1.5em;
+        padding: 0;
+        margin-top: 0;
+}
+
+.section-tipps {
+    margin-top: 50px;
+    padding: 0;
+
+    .section-tipp-title {
+        position: relative;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        h2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding-left: 15px;
+        }
+    }
+    p {
+        padding: 0 15px;
+    }
+}
+
+.section-recipe {
+    margin: 15px;
+    border: solid 1px $color-formoutline;
+    padding: 0;
+    display: inline-block;
+    img {
+        width: 50%;
+        height: auto;
+        float: left;
+    }
+}
+
+.section-receipe-text {
+        width: 50%;
+        display:inline-block;
+        padding-left: 15px;
+}
+
+.section-recipe-text-time {
+    display: inline-block;
+    &::before {
+        content: "";
+        background-image: url('/images/time.svg');
+        background-size: contain;
+        background-position: left center;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+    }
+}
+
+.section-recipe-text-info {
+    display: inline-block;
+    &::before {
+        content: "";
+        background-image: url('/images/info.svg');
+        background-size: contain;
+        background-position: center;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+    }
+}
+
+
+.wrapper-teaser-pictures {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 52px;
+    padding-bottom: 52px;
+    div {
+        margin: 3px;
+    }
+    div:nth-of-type(1) {
+        width: 63%;        
+        height: auto;
+    }
+    div:nth-of-type(2) {
+        height: auto;
+        width: 33%;
+        align-self: flex-end;
+    }
+    div:nth-of-type(3) {
+        height: auto;
+        width: 33%;
+    }
+    div:nth-of-type(4) {
+        height: auto;
+        width: 63%;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.wrapper-icon-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.icon-link {
+    background-color: $color-iconbuttons;
+    margin: 0 4px 0 4px;
+    width: 110px;
+    height: 150px;
+    display: flex;
+    div {
+        margin: auto;
+    }
+    img {
+        height: 60px;
+        width: 60px;
+        display: block;
+        margin: auto;
+    }
+    p {
+        text-align: center;
+        margin: 10px 0 0 0;
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+}
+
+footer {
+    height: 47px;
+    background-color: $color-contrast;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+
+    div:first-of-type a {
+        @include font-link-cursive();
+    }
+    div:last-of-type a {
+        @include font-link-normal();
+        margin: 4px;
+    }
+
+    div {
+        padding: 15px;
+        height: 100%;
+    }
+
+    a {
+        color: $color-backgroundbasic;
+    }
+
+}
+
+@media screen and (min-width: $smallbreakpoint) {
+    #hamburger {
+        display: none;
+    }
+    .navbar {
+        height: 80px;
+        //Logo
+        img {
+            width: 200px;
+            height: 80px;
+            position: relative;
+            top: 27px;
+            z-index: 10;
+        }
+        nav.navdesktop {
+            display: inline;
+        }
+        .language {
+            display: inline;
+        }     
+    }
+       
+    h2 {
+        font-size: 4.5em;
+        padding: 0;
+        margin: 0;
+    }
+    section {
+        margin: 0px;
+        p {
+            padding-right: 5%;
+        }
+    }
+    .section-wrapper {
+        padding: 120px 200px 120px 200px;
+    }
+    .wrapper-icon-link {
+        width: 100%;
+    }
+    .icon-link {
+        width: 100%;
+        height: 100%;
+        padding: 11px 11px 0px 11px;
+        img {
+            height: 120px;
+            width: 120px;
+        }
+        p {
+            text-align: center;
+            margin: 10px 0 0 0;
+            padding: 0;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+    }
+
+    .searchbar {
+        div {
+            display: flex;
+            align-items: center;
+        }
+    }
+    .button-searchbar {
+        width: 40px;
+        height: 40px;
+        background-size: 24px 24px;
+    }
+    #button-erfassen {
+        position: relative;
+        top: 96px;
+        right: -50%;
+    }
+    iframe {
+    height: calc(100vh - 267.5px);
+}
+
+}
+
+
+@media screen and (min-width: $mediumbreakpoint) {
+    .searchbar-container {
+        padding: 15px 210px 15px 210px;
+    }
+    h2 {
+        font-size: 4.5em;
+        padding: 0;
+        margin: 0;
+        margin-top: 115px;
+    }
+
+    section p {
+        padding-right: 200px;
+    }
+    .icon-link {
+    
+        img {
+            height: 170px;
+            width: 170px;
+        }
+        p {
+            text-align: center;
+            margin: 10px 0 0 0;
+            padding: 0;
+            font-size: 1.75em;
+            font-weight: 800;
+        }
+    }
+    footer {
+        padding: 37px 210px 37px 210px;
+        height: 95.5px;
+        div {
+            padding: 0;
+        } 
+        div:first-of-type a {
+            line-height: 0.8;
+            font-size:2.25em;
+        }
+        div:last-of-type a {
+           font-size: 1.125em;
+           line-height: 1.5;
+        }
+    }
+}
+
+@media screen and (min-width: $bigbreakpoint) {
+    .section-wrapper {
+        padding: 0 210px 210px 210px;
+    }
+    section a {
+        font-size: 1.75em;
+    }
+    section p {
+        margin-top: 3.4em;
+        font-size: 1.25em;
+        padding-right: 360px;
+    }
+    .icon-link {
+        width: 380px;
+        height: 380px;
+        margin: 0;
+    }
+    .wrapper-icon-link {
+        div:nth-of-type(2) {
+            margin: 0 20px 0 20px;
+        }
+    }
+}
+@media screen and (min-width: $widebreakpoint) {
+    
+}
+

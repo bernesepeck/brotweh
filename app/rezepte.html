@@ -1,0 +1,155 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Brotweh.ch</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Normalize CSS Sheets -->
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!--build:css css/styles.min.css-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!--endbuild-->
+    </head>
+    <body>
+        <header>
+            <!-- Navigations-Bar -->
+            <div class="navbar">
+                <a href="index.html"><img src="images/logo.svg" alt="logo"></a>
+                <!-- Navigations Overlay für Mobile Phone -->
+                <nav id="navoverlay" class="navmobile">
+                    <h2 class="title-menu">Menu</h2>
+                    <ul>
+                        <li><a href="map.html"> Suche </a></li>
+                        <li><a href="tipps.html"> Tipps </a></li>
+                        <li><a href="rezepte.html"> Rezepte </a></li>
+                    </ul>
+                    <h2 class="title-menu">Sprache</h2>
+                    <ul>
+                        <li><a href="de"> de </a></li>
+                        <li><a href="de"> fr </a></li>
+                        <li><a href="de"> it </a></li>
+                        <li><a href="de"> rm </a></li>
+                        <li><a href="de"> en </a></li>
+                    </ul>
+                </nav>
+                <!-- Hamburger Menu Mobile Phone -->
+                <a href="javascript:void(0);" onclick="toggleNav()">
+                    <div id="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </a>
+                <!-- Navigation für Desktop -->
+                <nav class="navdesktop">
+                    <ul>
+                        <li><a href="map.html"> Suche </a></li>
+                        <li><a href="tipps.html"> Tipps </a></li>
+                        <li><a href="rezepte.html"> Rezepte </a></li>
+                    </ul>
+                </nav>
+                <div class="language">
+                    <a href="de"> de </a>
+                    <a href="de"> fr </a>
+                    <a href="de"> it </a>
+                    <a href="de"> rm </a>
+                    <a href="de"> en </a>
+                </div>
+            </div>
+            <div class="banner-subsite">
+                <img src="images/homepicture.png" alt="banner">
+                <div>
+                    <h1> Rezepte </h1>
+                    <p> So hast du bestimmt nie mehr Brotweh </p>
+                </div>
+            </div>
+        </header>
+        <main class="main-subsite">
+            <div class="section-wrapper">
+                <section>
+                    <p>
+                       Brot bildet die Grundlage für zahlreiche 
+                       kulinarische Genüsse: Vom Amuse-Bouche über raffinierte Vorspeisen und besondere Hauptgänge bis zu Dessert-Träumen und Partyhäppchen. 
+                    </p>  
+                </section>
+                <section class="section-recipe clearfix">
+                    <img src="images/brot3.png" alt="Rauchbrot">
+                    <div class="section-receipe-text">
+                        <h3> Rauchbrot </h3>
+                        <span class="section-recipe-text-time"> 160 min </span> <br>
+                        <span class="section-recipe-text-info"> 4 Zustaten </span>
+                    </div>
+                </section>
+                 <section class="section-recipe clearfix">
+                    <img src="images/brot3.png" alt="Rauchbrot">
+                    <div class="section-receipe-text">
+                        <h3> Rauchbrot </h3>
+                        <span class="section-recipe-text-time"> 160 min </span> <br>
+                        <span class="section-recipe-text-info"> 4 Zustaten </span>
+                    </div>
+                </section>
+                 <section class="section-recipe clearfix">
+                    <img src="images/brot3.png" alt="Rauchbrot">
+                    <div class="section-receipe-text">
+                        <h3> Rauchbrot </h3>
+                        <span class="section-recipe-text-time"> 160 min </span> <br>
+                        <span class="section-recipe-text-info"> 4 Zustaten </span>
+                    </div>
+                </section>
+                 <section class="section-recipe clearfix">
+                    <img src="images/brot3.png" alt="Rauchbrot">
+                    <div class="section-receipe-text">
+                        <h3> Rauchbrot </h3>
+                        <span class="section-recipe-text-time"> 160 min </span> <br>
+                        <span class="section-recipe-text-info"> 4 Zustaten </span>
+                    </div>
+                </section>
+                <a href="#" class="section-link"> Mehr Rezepte </a>
+            </div>
+        </main>
+        <footer>
+            <div>
+                <a href="home.html"> brotweh.ch </a>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="kontakt.html"> Kontakt </a></li>
+                    <li><a href="impressum.html"> Impressum </a></li>
+                </ul>
+            </div>
+        </footer>
+        <!-- Script für Overlay Menu -->
+        <script>
+            function toggleNav() {
+                var navoverlay = document.getElementById("navoverlay");
+                var hamburger = document.getElementById("hamburger");
+                if (!navoverlay.offsetWidth == 0) {
+                    hamburger.className = "hamburger-close"
+                    navoverlay.className = "hamburger-close"
+                    //navoverlay.style.width ="0%"
+                }
+                else {
+                    hamburger.className = "hamburger-open"
+                    navoverlay.className = "hamburger-open"
+                    //navoverlay.style.width = "100%"
+                }
+            }
+        </script>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!--removeIf(production)-->
+        <script id="__bs_script__">
+            //<![CDATA[
+            document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+            //]]>
+        </script>
+        <!--endRemoveIf(production)-->
+    </body>
+</html>
