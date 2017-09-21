@@ -2,10 +2,10 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Brotweh.ch</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,12 +20,12 @@
         <header>
             <!-- Navigations-Bar -->
             <div class="navbar">
-                <a href="index.html"><img src="images\logo.svg"></a>
+                <a href="index.html"><img src="images/logo.svg" alt="logo"></a>
                 <!-- Navigations Overlay für Mobile Phone -->
                 <nav id="navoverlay" class="navmobile">
                     <h2 class="title-menu">Menu</h2>
                     <ul>
-                        <li><a href="suche.html"> Suche </a></li>
+                        <li><a href="map.html"> Suche </a></li>
                         <li><a href="tipps.html"> Tipps </a></li>
                         <li><a href="rezepte.html"> Rezepte </a></li>
                     </ul>
@@ -49,7 +49,7 @@
                 <!-- Navigation für Desktop -->
                 <nav class="navdesktop">
                     <ul>
-                        <li><a href="suche.html"> Suche </a></li>
+                        <li><a href="map.html"> Suche </a></li>
                         <li><a href="tipps.html"> Tipps </a></li>
                         <li><a href="rezepte.html"> Rezepte </a></li>
                     </ul>
@@ -63,17 +63,17 @@
                 </div>
             </div>
             <div class="banner">
-                <img src="images\homepicture.png">  
+                <img src="images/homepicture.png" alt="banner">  
             </div>
         </header>
         <main>
             <!-- Searchbar -->
             <div class="searchbar-container">
-                <form action="" class="searchbar">
+                <form action="#" class="searchbar">
                     <input type="text" name="suche" placeholder="Ihr Standort">
                     <div>
-                        <img src="images\mylocation.svg">
-                        <img src="images\search.svg">
+                        <img src="images/mylocation.svg" alt="gps-location">
+                        <img src="images/search.svg" alt="search-button">
                     </div>
                 </form>
             </div>
@@ -92,31 +92,37 @@
                     </p>
                     <div class="wrapper-icon-link">
                         <div class="icon-link">
-                            <img src="images/talk.svg">
-                            <p> Wörterbuch </p>
+                            <div>
+                                <img src="images/talk.svg" alt="talk-icon">
+                                <p> Wörterbuch </p>
+                            </div>
                         </div>
                         <div class="icon-link">
-                            <img src="images/toaster.svg">
-                            <p> Lokale <br> Alternativen </p>
+                            <div>
+                                <img src="images/toaster.svg" alt="toaster-icon">
+                                <p> Lokale <br> Alternativen </p>
+                            </div>
                         </div>
                         <div class="icon-link">
-                            <img src="images/cereals.svg">
-                            <p> Schweizer <br> Alternativen </p>
+                            <div>
+                                <img src="images/cereals.svg" alt="cerealts-icon">
+                                <p> Schweizer <br> Alternativen </p>
+                            </div>
                         </div>
                     </div>
-                    <a href="/tipps.html"> zu den Tipps </a>
+                    <a href="/tipps.html" class="section-link"> zu den Tipps </a>
                 </section>
                 <section>
                     <h2>Rezepte für hausgemachte Frische</h2>
                     <p>
                         Für Hobbyköche und falls alle anderen Optionen Ihnen nicht das gewünschte Erlebnis ermöglichen, haben wir eine Sammlung von leckeren, einfach zubereitbaren Brotrezepten.
                     </p>
-                    <a href="rezepte.html"> zu den Rezepte </a>
+                    <a href="rezepte.html" class="section-link"> zu den Rezepte </a>
                     <div class="wrapper-teaser-pictures">
-                        <div><img src="images/backen1.png"></div>
-                        <div><img src="images/backen2.png"></div>
-                        <div><img src="images/backen3.png"></div>
-                        <div><img src="images/brot2.png"></div>
+                        <div><img src="images/backen1.png" alt="backen-bild1"></div>
+                        <div><img src="images/backen2.png" alt="backen-bild2"></div>
+                        <div><img src="images/backen3.png" alt="backen-bild3"></div>
+                        <div><img src="images/brot2.png" alt="backen-bild4"></div>
                     </div>
                 </section>
             </div>
