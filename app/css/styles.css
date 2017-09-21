@@ -630,8 +630,31 @@ footer {
     position: relative;
     top: 96px;
     right: -50%; }
+  /*
+    Google Maps wird an die neue Grösse von Header und Footer angepasst. 
+    */
   iframe {
-    height: calc(100vh - 267.5px); } }
+    height: calc(100vh - 267.5px); }
+  /*
+    Wörterbuch Anpassung für Responsiv
+    */
+  .section-translation-definition-list {
+    padding: 1.5em 1.5em 4em 1.5em; }
+    .section-translation-definition-list dt {
+      font-size: 1.2em; }
+    .section-translation-definition-list dd {
+      font-size: 1.2em; }
+  /*
+    Anpassung Titel Wörterbuch und Selector
+    */
+  .section-translation-title-container {
+    font-size: 1.75em;
+    padding-left: 0; }
+  /*
+    Titel Subseiten Anpassung Responsiv
+    */
+  .title-subsite {
+    font-size: 2.25em; } }
 
 @media screen and (min-width: 1000px) {
   .searchbar-container, .searchbar-container-subsite {

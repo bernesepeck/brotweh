@@ -23,8 +23,9 @@ $font-standard: "Helvetica Neue", Arial, Helvetica, sans-serif;
 /*
 Variablen für die Schriftgrössen
 */
-$fontsize-xs: 0.8em;
-$fontsize-s: 1em;
+$fontsize-xxs: 0.8em;
+$fontsize-xs: 1em;
+$fontsize-s: 1.2em;
 $fontsize-m: 1.5em;
 $fontsize-l: 1.75em;
 $fontsize-xl: 2.25em;
@@ -101,7 +102,7 @@ h1 {
 h2 {
     font-family: $font-highlight;
     color: $color-brown;
-    font-size: $fontsize-s;
+    font-size: $fontsize-xs;
     padding-top: 2em;
 }
 
@@ -159,7 +160,7 @@ Navigationsbar oben
         align-self: center;  
         margin-right: auto;
         ul li a {
-            font-size: $fontsize-s;
+            font-size: $fontsize-xs;
             text-transform: uppercase;
             align-self: center;
             font-weight: bold;
@@ -503,7 +504,7 @@ Titel für die Sektion Wörterbuch
     }
     span {
         font-family: $font-standard;
-        font-size: 1.2em;
+        font-size: $fontsize-s;
         font-weight: bold; 
     }
 }
@@ -683,7 +684,7 @@ Icon Teaser für Homeseite
     p {
         text-align: center;
         margin: 10px 0 0 0;
-        font-size: $fontsize-xs;
+        font-size: $fontsize-xxs;
         font-weight: bold;
     }
 }
@@ -701,11 +702,11 @@ footer {
 
     div:first-of-type a {
         font-family: $font-highlight;
-        font-size: $fontsize-s;
+        font-size: $fontsize-xs;
     }
     div:last-of-type a {
         font-family: $font-standard;
-        font-size: $fontsize-xs;
+        font-size: $fontsize-xxs;
         margin: 4px;
     }
 
@@ -771,7 +772,7 @@ footer {
             text-align: center;
             margin: 10px 0 0 0;
             padding: 0;
-            font-size: $fontsize-xs;
+            font-size: $fontsize-xxs;
             font-weight: bold;
         }
     }
@@ -792,9 +793,40 @@ footer {
         top: 96px;
         right: -50%;
     }
+    /*
+    Google Maps wird an die neue Grösse von Header und Footer angepasst. 
+    */
     iframe {
     height: calc(100vh - 267.5px);
-}
+    }
+    /*
+    Wörterbuch Anpassung für Responsiv
+    */
+    .section-translation-definition-list {
+        padding: 1.5em 1.5em 4em 1.5em;
+        dt {
+            font-size: $fontsize-s;
+        }
+        dd{
+            font-size: $fontsize-s;
+        }
+    }
+    
+    /*
+    Anpassung Titel Wörterbuch und Selector
+    */
+    .section-translation-title-container {
+        font-size: $fontsize-l;
+        padding-left: 0;
+    }
+
+    /*
+    Titel Subseiten Anpassung Responsiv
+    */
+    .title-subsite {
+        font-size: $fontsize-xl;
+    }
+
 
 }
 
@@ -838,7 +870,7 @@ footer {
             font-size:2.25em;
         }
         div:last-of-type a {
-           font-size: $fontsize-s;
+           font-size: $fontsize-xs;
            line-height: 1.5;
         }
     }
