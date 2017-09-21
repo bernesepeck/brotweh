@@ -13,16 +13,23 @@ $color-iconbuttons: #f3f3f3;
 Schriftenimport
 */
 @import url('https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Open+Sans');
+
 /*
 Variablen für die Schriften
 */
 $font-highlight: 'Oleo Script Swash Caps', cursive;
 $font-standard: "Helvetica Neue", Arial, Helvetica, sans-serif;
 
-@mixin font-link-cursive{
-    font-family: $font-highlight;
-    font-size: 1em;
-}
+/*
+Variablen für die Schriftgrössen
+*/
+$fontsize-xs: 0.8em;
+$fontsize-s: 1em;
+$fontsize-m: 1.5em;
+$fontsize-l: 1.75em;
+$fontsize-xl: 2.25em;
+$fontsize-xxl: 4.55em;
+
 
 @mixin font-link-normal{
     font-family: $font-standard;
@@ -89,7 +96,7 @@ a:hover {
 
 h1 {
     font-family: $font-highlight;
-    font-size: 2.25em;
+    font-size: $fontsize-xl;
     margin: 0;
 
 }
@@ -97,7 +104,7 @@ h1 {
 h2 {
     font-family: $font-highlight;
     color: $color-brown;
-    font-size: 1em;
+    font-size: $fontsize-s;
     padding-top: 2em;
 }
 
@@ -144,7 +151,7 @@ ul, li {
         align-self: center;  
         margin-right: auto;
         ul li a {
-            font-size: 1em;
+            font-size: $fontsize-s;
             text-transform: uppercase;
             align-self: center;
             font-weight: bold;
@@ -172,7 +179,7 @@ ul, li {
 .title-menu {
     font-family: $font-highlight;
     text-decoration: underline;
-    font-size: 2.25em;
+    font-size: $fontsize-xl;
     padding: 50px 0 15px 0;
     margin: 0;
 }
@@ -215,7 +222,7 @@ ul, li {
     transition: width opacity .2s ease-out;
     z-index: 5;
     a {
-         font-size: 1.5em;
+         font-size: $fontsize-m;
         font-weight: bold;
         line-height: 1.67;
     }
@@ -433,7 +440,7 @@ iframe {
         border: 0;
         color: $color-highlight;
         font-family: $font-highlight;
-        font-size: 1.5em;
+        font-size: $fontsize-m;
     }
     span {
         font-family: $font-standard;
@@ -465,7 +472,7 @@ iframe {
 
 .title-subsite {
         color: $color-white;
-        font-size: 1.5em;
+        font-size: $fontsize-m;
         padding: 0;
         margin-top: 0;
 }
@@ -594,7 +601,7 @@ iframe {
     p {
         text-align: center;
         margin: 10px 0 0 0;
-        font-size: 0.8em;
+        font-size: $fontsize-xs;
         font-weight: bold;
     }
 }
@@ -608,10 +615,12 @@ footer {
     margin: 0;
 
     div:first-of-type a {
-        @include font-link-cursive();
+        font-family: $font-highlight;
+        font-size: $fontsize-s;
     }
     div:last-of-type a {
-        @include font-link-normal();
+        font-family: $font-standard;
+        font-size: $fontsize-xs;
         margin: 4px;
     }
 
@@ -649,7 +658,7 @@ footer {
     }
        
     h2 {
-        font-size: 4.5em;
+        font-size: $fontsize-xxl;
         padding: 0;
         margin: 0;
     }
@@ -677,7 +686,7 @@ footer {
             text-align: center;
             margin: 10px 0 0 0;
             padding: 0;
-            font-size: 0.8em;
+            font-size: $fontsize-xs;
             font-weight: bold;
         }
     }
@@ -710,7 +719,7 @@ footer {
         padding: 15px 210px 15px 210px;
     }
     h2 {
-        font-size: 4.5em;
+        font-size: $fontsize-xxl;
         padding: 0;
         margin: 0;
         margin-top: 115px;
@@ -729,7 +738,7 @@ footer {
             text-align: center;
             margin: 10px 0 0 0;
             padding: 0;
-            font-size: 1.75em;
+            font-size: $fontsize-l;
             font-weight: 800;
         }
     }
@@ -744,7 +753,7 @@ footer {
             font-size:2.25em;
         }
         div:last-of-type a {
-           font-size: 1.125em;
+           font-size: $fontsize-s;
            line-height: 1.5;
         }
     }
@@ -755,7 +764,7 @@ footer {
         padding: 0 210px 210px 210px;
     }
     section a {
-        font-size: 1.75em;
+        font-size: $fontsize-l;
     }
     section p {
         margin-top: 3.4em;
