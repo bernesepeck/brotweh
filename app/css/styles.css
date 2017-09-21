@@ -1,5 +1,14 @@
 @charset "UTF-8";
+/*
+Deklaration aller Farben
+*/
+/*
+Schriftenimport
+*/
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Open+Sans");
+/*
+Variablen für die Schriften
+*/
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -17,7 +26,7 @@
 a {
   text-decoration: none;
   color: #000000;
-  font-family: sans-serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0; }
 
@@ -300,7 +309,7 @@ iframe {
     font-family: "Oleo Script Swash Caps", cursive;
     font-size: 1.5em; }
   .section-translation-title-container span {
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 1.2em;
     font-weight: bold; }
 
@@ -442,7 +451,7 @@ footer {
     font-family: "Oleo Script Swash Caps", cursive;
     font-size: 1em; }
   footer div:last-of-type a {
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 0.875em;
     margin: 4px; }
   footer div {

@@ -1,25 +1,31 @@
-//Farben
-$color-buttonbackground: #FF0000;
-$color-contrast: #52331B;
+/*
+Deklaration aller Farben
+*/
+$color-red: #FF0000;
+$color-brown: #52331B;
 $color-highlight: #FFBF00;
-$color-font: #000000;
-$color-backgroundbasic: #ffffff;
+$color-black: #000000;
+$color-white: #ffffff;
 $color-formoutline: #e7e7e7;
 $color-iconbuttons: #f3f3f3;
 
-//Font
+/*
+Schriftenimport
+*/
 @import url('https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Open+Sans');
-
-$ueberschriften: 'Oleo Script Swash Caps', cursive;
-$standardfont: sans-serif;
+/*
+Variablen für die Schriften
+*/
+$font-highlight: 'Oleo Script Swash Caps', cursive;
+$font-standard: "Helvetica Neue", Arial, Helvetica, sans-serif;
 
 @mixin font-link-cursive{
-    font-family: $ueberschriften;
+    font-family: $font-highlight;
     font-size: 1em;
 }
 
 @mixin font-link-normal{
-    font-family: $standardfont;
+    font-family: $font-standard;
     font-size: 0.875em;
 }
 
@@ -29,8 +35,8 @@ $standardfont: sans-serif;
 }
 
 @mixin button {
-        background-color: $color-buttonbackground;
-        color: $color-backgroundbasic;
+        background-color: $color-red;
+        color: $color-white;
         border: 0;
         border-radius: 4px;
 }
@@ -71,26 +77,26 @@ $widebreakpoint: 1600px;
 
 a {
     text-decoration: none;
-    color: $color-font;
-    font-family: $standardfont;
+    color: $color-black;
+    font-family: $font-standard;
     padding: 0;
     margin: 0;
 }
 
 a:hover {
-    color: $color-buttonbackground;
+    color: $color-red;
 }
 
 h1 {
-    font-family: $ueberschriften;
+    font-family: $font-highlight;
     font-size: 2.25em;
     margin: 0;
 
 }
 
 h2 {
-    font-family: $ueberschriften;
-    color: $color-contrast;
+    font-family: $font-highlight;
+    color: $color-brown;
     font-size: 1em;
     padding-top: 2em;
 }
@@ -164,7 +170,7 @@ ul, li {
 }
 
 .title-menu {
-    font-family: $ueberschriften;
+    font-family: $font-highlight;
     text-decoration: underline;
     font-size: 2.25em;
     padding: 50px 0 15px 0;
@@ -202,7 +208,7 @@ ul, li {
     width: 0;
     position: fixed;
     overflow: hidden;
-    background-color: $color-backgroundbasic;
+    background-color: $color-white;
     text-align: center;
     top: 60px;
     left: 0;
@@ -214,7 +220,7 @@ ul, li {
         line-height: 1.67;
     }
     a:hover {
-        color: $color-buttonbackground;
+        color: $color-red;
     }
     ul:nth-of-type(1) li{
         display: block;
@@ -325,7 +331,7 @@ ul, li {
 .button-searchbar-submit {
     @extend .button-searchbar;
     background-image: url(/images/search.svg);
-    background-color: $color-backgroundbasic;
+    background-color: $color-white;
 }
 
 main {
@@ -366,7 +372,7 @@ section {
 #formoverlay {
     width: 0;
     height: calc(100vh - 107px);
-    background-color: $color-backgroundbasic;
+    background-color: $color-white;
     position: fixed;
     overflow: hidden;
     text-align: center;
@@ -426,19 +432,19 @@ iframe {
     select {
         border: 0;
         color: $color-highlight;
-        font-family: $ueberschriften;
+        font-family: $font-highlight;
         font-size: 1.5em;
     }
     span {
-        font-family: $standardfont;
+        font-family: $font-standard;
         font-size: 1.2em;
         font-weight: bold; 
     }
 }
 
 .section-translation-definition-list {
-    background-color: $color-contrast;
-    color: $color-backgroundbasic;
+    background-color: $color-brown;
+    color: $color-white;
     width: 100%;
     padding: 1em;
     dt {
@@ -458,7 +464,7 @@ iframe {
 }
 
 .title-subsite {
-        color: $color-backgroundbasic;
+        color: $color-white;
         font-size: 1.5em;
         padding: 0;
         margin-top: 0;
@@ -595,7 +601,7 @@ iframe {
 
 footer {
     height: 47px;
-    background-color: $color-contrast;
+    background-color: $color-brown;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -615,7 +621,7 @@ footer {
     }
 
     a {
-        color: $color-backgroundbasic;
+        color: $color-white;
     }
 
 }
