@@ -12,6 +12,15 @@ Variablen für die Schriften
 /*
 Variablen für die Schriftgrössen
 */
+/*
+Variabeln für die Breakpoints
+*/
+/*
+Mixin für Formular Felder
+*/
+/*
+Mixin für Buttons
+*/
 .clearfix:before,
 .clearfix:after {
   content: " ";

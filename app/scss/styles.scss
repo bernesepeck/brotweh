@@ -30,28 +30,32 @@ $fontsize-l: 1.75em;
 $fontsize-xl: 2.25em;
 $fontsize-xxl: 4.55em;
 
+/*
+Variabeln für die Breakpoints
+*/
+$breakpoint-s: 1000px;
+$breakpoint-m: 1000px;
+$breakpoint-l: 1200px;
+$breakpoint-xl: 1600px;
 
-@mixin font-link-normal{
-    font-family: $font-standard;
-    font-size: 0.875em;
-}
-
+/*
+Mixin für Formular Felder
+*/
 @mixin form-field {
     border: 1px solid $color-formoutline;
     box-shadow: 0px 1px 8px 0 rgba(195, 195, 195, 0.25);
 }
 
+/*
+Mixin für Buttons
+*/
 @mixin button {
         background-color: $color-red;
         color: $color-white;
         border: 0;
         border-radius: 4px;
 }
-//Breakpoints
-$smallbreakpoint: 1000px;
-$mediumbreakpoint: 1000px;
-$bigbreakpoint: 1200px;
-$widebreakpoint: 1600px;
+
 
 
 //Padding Seite
@@ -635,7 +639,7 @@ footer {
 
 }
 
-@media screen and (min-width: $smallbreakpoint) {
+@media screen and (min-width: $breakpoint-s) {
     #hamburger {
         display: none;
     }
@@ -714,7 +718,7 @@ footer {
 }
 
 
-@media screen and (min-width: $mediumbreakpoint) {
+@media screen and (min-width: $breakpoint-m) {
     .searchbar-container {
         padding: 15px 210px 15px 210px;
     }
@@ -759,7 +763,7 @@ footer {
     }
 }
 
-@media screen and (min-width: $bigbreakpoint) {
+@media screen and (min-width: $breakpoint-l) {
     .section-wrapper {
         padding: 0 210px 210px 210px;
     }
@@ -782,7 +786,7 @@ footer {
         }
     }
 }
-@media screen and (min-width: $widebreakpoint) {
+@media screen and (min-width: $breakpoint-xl) {
     
 }
 
