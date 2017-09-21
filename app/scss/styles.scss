@@ -50,23 +50,15 @@ Mixin für Formular Felder
 Mixin für Buttons
 */
 @mixin button {
-        background-color: $color-red;
-        color: $color-white;
-        border: 0;
-        border-radius: 4px;
+    background-color: $color-red;
+    color: $color-white;
+    border: 0;
+    border-radius: 4px;
 }
 
-
-
-//Padding Seite
-@mixin padding {
-    padding: {
-        left: 15px;
-        right: 15px;
-    }
-}
-
-//Clearfix Class
+/*
+clearfix Klasse
+*/
 .clearfix:before,
 .clearfix:after {
     content: " "; 
@@ -81,7 +73,9 @@ Mixin für Buttons
     *zoom: 1;
 }
 
-
+/*
+Boxsizing für alle Elemente
+*/
 * {
     box-sizing: border-box;
 }
@@ -102,7 +96,6 @@ h1 {
     font-family: $font-highlight;
     font-size: $fontsize-xl;
     margin: 0;
-
 }
 
 h2 {
@@ -118,15 +111,23 @@ ul, li {
     display: inline;
 }
 
+/*
+Navigationsbar oben
+*/
 .navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: 60px;
     border: 1px solid $color-formoutline;
-    @include padding;
+    padding: {
+        left: 15px;
+        right: 15px;
+    }
 
-    //Logo
+    /*
+    Logo Styling
+    */
     img {
         width: 120px;
         height: 60px;
@@ -135,7 +136,9 @@ ul, li {
         z-index: 10;
     }
 
-    //Erfassen Button
+    /*
+    Button zum Erfassen eines neuen Eintrages
+    */
     #button-erfassen {
         @include button();
         height: 38px;
@@ -146,10 +149,11 @@ ul, li {
 
         &.form-open {
             
+        }
     }
-    }
-    
-    //Navigation Desktop
+    /*
+    Navigation Desktop
+    */
     nav.navdesktop {
         display: none;
         align-self: center;  
@@ -166,7 +170,9 @@ ul, li {
         }
     }
 
-    //Sprachauswahl
+    /*
+    Sprachauswahl
+    */
     .language  {
         display: none;
         align-self: center;
@@ -176,10 +182,12 @@ ul, li {
 
     .navbar-left {
         display: flex;
-        
     }
 }
 
+/*
+Titel Menu Mobile
+*/
 .title-menu {
     font-family: $font-highlight;
     text-decoration: underline;
@@ -188,6 +196,9 @@ ul, li {
     margin: 0;
 }
 
+/*
+Styling für Hamburger
+*/
 #hamburger {
     align-self: center;
     margin-top: 16.5px;
@@ -214,6 +225,9 @@ ul, li {
     }
 }
 
+/*
+Overlay Menu
+*/
 #navoverlay {
     height: 100%;
     width: 0;
@@ -246,6 +260,9 @@ ul, li {
     }
 }
 
+/*
+Styling für den Banner auf der Homeseite
+*/
 .banner {
     overflow: hidden;
     img {
@@ -256,6 +273,9 @@ ul, li {
     }
 }
 
+/*
+Styling für den Banner auf den Unterseiten
+*/
 .banner-subsite {
     height: 300px;
     position: relative;
@@ -264,7 +284,9 @@ ul, li {
         height: 100%;
         object-fit: cover;
     }
-    /*Container für Titel und Untertitel*/
+    /*
+    Container für Titel und Untertitel
+    */
     div {
         position: absolute;
         color:white;
@@ -277,25 +299,36 @@ ul, li {
         background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0));
         background: linear-gradient(to top, rgba(0, 0, 0, 0.59) 60%, rgba(0, 0, 0, 0));
 
-        /*Untertitel*/
+        /*
+        Untertitel
+        */
         p {
             margin: 0;
         }
     }
 }
 
+/*
+Searchbar Cointainer beinhaltet die Suche für die Homeseite
+*/
 .searchbar-container {
     height: 72px;
     border-bottom: 1px solid $color-formoutline;
     padding: 15px;
 }
 
+/*
+Searchbar Cointainer beinhaltet die Suche für die Subseite
+*/
 .searchbar-container-subsite {
     @extend .searchbar-container;
     padding-top: 35px;
     height: 92px;
 }
 
+/*
+Suchbar
+*/
 .searchbar {
     display: flex;
     justify-content: space-between;
@@ -321,6 +354,9 @@ ul, li {
     }
 }
 
+/*
+Der Suchbutton sowie der GPS Button
+*/
 .button-searchbar {
     border: none;
     border-radius: 4px;
@@ -349,7 +385,9 @@ main {
     display: inline-block;
     width: 100%;
 }
-
+/*
+Main Sektion für Subseiten
+*/
 .main-subsite {
     @extend main;
     padding-top: 30px;
@@ -362,8 +400,6 @@ main {
     }
 }
 
-
-
 section {
     padding: 0 15px 0 15px;
     p {
@@ -371,15 +407,22 @@ section {
     }
 }
 
+/*
+Links in Section zu mehr Inhalt
+*/
 .section-link {
     font-weight: bold;
-        text-decoration: underline;
-        bottom: 10px;
-        right: 10px;
-        float: right; 
-        margin-top: 21px;
+    text-decoration: underline;
+    bottom: 10px;
+    right: 10px;
+    float: right; 
+    margin-top: 21px;
 }
 
+/*
+Overlay Formular zum Erfassen von neuen Einträgen
+Erscheint erst bei Klick auf Erfassen-Button
+*/
 #formoverlay {
     width: 0;
     height: calc(100vh - 107px);
@@ -398,6 +441,9 @@ section {
     }
 }
 
+/*
+Formular für neue Einträge ist in Formoverlay
+*/
 .form-new-entry {
     width: 100%;
     display: flex;
@@ -422,22 +468,31 @@ section {
         margin: 15px;
     }
 }
-
+/*
+Der Submint Button für das Formular neue Einträge
+*/
 .button-submit-form {
     @include button();
     height: 39px;
     margin: 15px;
 }
-
+/*
+Google Maps Einbindung
+*/
 iframe {
     width: 100%;
     height: calc(100vh - 199px);
 }
 
+/*
+Section für Wörterbuch
+*/
 .section-translation {
     padding: 0;
 }
-
+/*
+Titel für die Sektion Wörterbuch
+*/
 .section-translation-title-container {
     padding: 1em;
     select {
@@ -452,7 +507,9 @@ iframe {
         font-weight: bold; 
     }
 }
-
+/*
+Definitionsliste für das Wörterbuch (Inhalt)
+*/
 .section-translation-definition-list {
     background-color: $color-brown;
     color: $color-white;
@@ -474,6 +531,9 @@ iframe {
   }
 }
 
+/*
+Titel für Subseiten-Sektionen
+*/
 .title-subsite {
         color: $color-white;
         font-size: $fontsize-m;
@@ -481,6 +541,9 @@ iframe {
         margin-top: 0;
 }
 
+/*
+Sektion für Tipps-Teaser
+*/
 .section-tipps {
     margin-top: 50px;
     padding: 0;
@@ -502,7 +565,9 @@ iframe {
         padding: 0 15px;
     }
 }
-
+/*
+Sektion für Rezepte-Teaser
+*/
 .section-recipe {
     margin: 15px;
     border: solid 1px $color-formoutline;
@@ -514,13 +579,18 @@ iframe {
         float: left;
     }
 }
-
+/*
+Text für Rezepte-Teaser
+*/
 .section-receipe-text {
         width: 50%;
         display:inline-block;
         padding-left: 15px;
 }
 
+/*
+Icon für Zeit bei Rezept-Teaser
+*/
 .section-recipe-text-time {
     display: inline-block;
     &::before {
@@ -534,6 +604,9 @@ iframe {
     }
 }
 
+/*
+Icon für Informationen bei Rezept-Teaser
+*/
 .section-recipe-text-info {
     display: inline-block;
     &::before {
@@ -547,7 +620,9 @@ iframe {
     }
 }
 
-
+/*
+Bild für Rezept-Teaser
+*/
 .wrapper-teaser-pictures {
     width: 100%;
     display: flex;
@@ -581,6 +656,9 @@ iframe {
     }
 }
 
+/*
+Icon Teaser für Homeseite
+*/
 .wrapper-icon-link {
     display: flex;
     flex-direction: row;
@@ -610,6 +688,9 @@ iframe {
     }
 }
 
+/*
+Footer Styling
+*/
 footer {
     height: 47px;
     background-color: $color-brown;
