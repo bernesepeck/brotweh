@@ -201,7 +201,6 @@ Styling für den Banner auf der Homeseite
 Styling für den Banner auf den Unterseiten
 */
 .banner-subsite {
-  height: 300px;
   position: relative;
   /*
     Container für Titel und Untertitel
@@ -209,6 +208,7 @@ Styling für den Banner auf den Unterseiten
   .banner-subsite img {
     width: 100%;
     height: 100%;
+    max-height: 600px;
     object-fit: cover; }
   .banner-subsite div {
     position: absolute;
@@ -598,10 +598,15 @@ footer {
     font-size: 4.55em;
     padding: 0;
     margin: 0; }
+  /*
+    Anpassung der Section Responsiv
+    */
   section {
-    margin: 0px; }
+    margin: 0px;
+    padding: 0px; }
     section p {
-      padding-right: 5%; }
+      padding-right: 0 !important;
+      font-size: 1.5em; }
   .section-wrapper {
     padding: 120px 200px 120px 200px; }
   .wrapper-icon-link {
