@@ -35,7 +35,7 @@ $fontsize-xxl: 4.55em;
 Variabeln für die Breakpoints
 */
 $breakpoint-s: 1000px;
-$breakpoint-m: 1000px;
+$breakpoint-m: 999px;
 $breakpoint-l: 1200px;
 $breakpoint-xl: 1600px;
 
@@ -149,7 +149,29 @@ Navigationsbar oben
         margin-left: auto;
 
         &.form-open {
-            
+            display: none;
+        }
+        &.form-close {
+            display: block;
+        }
+    }
+    /*
+    Button zum Schliessen des Formulars
+    */
+    #button-schliessen {
+        @include button();
+        height: 38px;
+        width: 110px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        display: none;
+
+        &.form-open {
+            display: none;
+        }
+        &.form-close {
+            display: block;
         }
     }
     /*
@@ -285,27 +307,28 @@ Styling für den Banner auf den Unterseiten
         max-height: 600px;
         object-fit: cover;
     }
-    /*
+}
+/*
     Container für Titel und Untertitel
     */
-    div {
-        position: absolute;
-        color:white;
-        bottom: 0;
-        left: 0;
-        padding: 15px;
-        width: 100%;
-        background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0));
-        background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0));
-        background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0));
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.59) 60%, rgba(0, 0, 0, 0));
+.banner-gradient {
+    position: absolute;
+    color:white;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    padding-top: 15%;
+    width: 100%;
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0));
+    background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0));
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.59) 30%, rgba(0, 0, 0, 0));
 
-        /*
-        Untertitel
-        */
-        p {
-            margin: 0;
-        }
+    /*
+    Untertitel
+    */
+    p {
+        margin: 0;
     }
 }
 
@@ -450,6 +473,12 @@ Formular für neue Einträge ist in Formoverlay
     display: flex;
     flex-direction: column;
     padding: 15px;
+    h2 {
+        font-size: $fontsize-l;
+        margin-left: 15px;
+        padding-top: 15px;
+        text-align: left;
+    }
     input {
         @include form-field();
         width: auto;
@@ -669,7 +698,7 @@ Icon Teaser für Homeseite
 .icon-link {
     background-color: $color-iconbuttons;
     margin: 0 4px 0 4px;
-    width: 110px;
+    width: 30%;
     height: 150px;
     display: flex;
     div {
@@ -759,15 +788,21 @@ footer {
             font-size: $fontsize-m;
         }
     }
+    /*
+    Anpassung Sektion Wrapper für Responsiv
+    */
     .section-wrapper {
-        padding: 120px 200px 120px 200px;
+        padding: 20px 200px 120px 200px;
     }
+    /*
+    Anpassung Icon Teaser Responsiv
+    */
     .wrapper-icon-link {
         width: 100%;
     }
     .icon-link {
         width: 100%;
-        height: 100%;
+        height: 350px;
         padding: 11px 11px 0px 11px;
         img {
             height: 120px;
@@ -781,28 +816,75 @@ footer {
             font-weight: bold;
         }
     }
-
+    /*
+    Section-Link vergrössern 
+    */
+    .section-link {
+        font-size: $fontsize-m;
+    }
+    /*
+    Searchbar bei Seite Map einmitten bei grösseren Screens
+    */
     .searchbar {
         div {
             display: flex;
             align-items: center;
         }
     }
+    /*
+    Icons für die Searchbar vergrössern bei grösserem Screen
+    */
     .button-searchbar {
         width: 40px;
         height: 40px;
         background-size: 24px 24px;
     }
+    /*
+    Titel in Banner anpassen
+    */
+    .banner-subsite {
+        div {
+            padding-left: 200px;
+            p {
+            font-size: $fontsize-l;
+            }
+            h1 {
+            font-size: $fontsize-xxl;
+            }
+        }
+    }
+    /*
+    Button in untere Bar positionieren bei grösseren Screens
+    */
     #button-erfassen {
-        position: relative;
+        position: fixed;
         top: 96px;
-        right: -50%;
+        right: 2%;
+        z-index: 10;
+    }
+    #button-schliessen {
+        position: fixed;
+        top: 96px;
+        right: 2%;
+        z-index: 10;
+    }
+    /*
+    Formular Responsiv
+    */
+    .form-new-entry {
+        h2 {
+            margin-top: 1em;
+            font-size: $fontsize-xl;
+        }
+    }
+    #formoverlay {
+        height: calc(100vh - 175.5px);
     }
     /*
     Google Maps wird an die neue Grösse von Header und Footer angepasst. 
     */
     iframe {
-    height: calc(100vh - 267.5px);
+        height: calc(100vh - 267.5px);
     }
     /*
     Wörterbuch Anpassung für Responsiv
@@ -830,27 +912,63 @@ footer {
     */
     .title-subsite {
         font-size: $fontsize-xl;
+        padding-bottom: 15px;
     }
-
-
+    /*
+    Sektion Tipps Anpassung für Responsiv
+    */
+    .section-tipps {
+        p {
+            padding-left: 0;
+        }
+    }
+    /*
+    Section Rezepte für Responsiv
+    */
+    .section-recipe {
+        width: calc(50% - 60px);
+        img {
+            width: 100%
+        }
+    }
+    .section-receipe-text {
+        padding: 15px;
+    }
 }
 
 
 @media screen and (min-width: $breakpoint-m) {
-    .searchbar-container {
-        padding: 15px 210px 15px 210px;
-    }
+    
+}
+
+@media screen and (min-width: $breakpoint-l) {
+    /*
+    Anpassung Überschrift für Breakpoint L
+    */
     h2 {
         font-size: $fontsize-xxl;
         padding: 0;
         margin: 0;
         margin-top: 115px;
     }
-
-    section p {
-        padding-right: 200px;
+    /*
+    Anpassung Searchbar Container für Responsiv
+    */
+    .searchbar-container {
+        padding: 15px 210px 15px 210px;
+    }
+    /*
+    Anpassung Icon Teaser für grösseren Screen
+    */
+    .wrapper-icon-link {
+        div:nth-of-type(2) {
+            margin: 0 20px 0 20px;
+        }
     }
     .icon-link {
+        width: 380px;
+        height: 380px;
+        margin: 0;
     
         img {
             height: 170px;
@@ -860,8 +978,36 @@ footer {
             text-align: center;
             margin: 10px 0 0 0;
             padding: 0;
-            font-size: $fontsize-l;
             font-weight: 800;
+            font-size: $fontsize-m;
+        }
+    }
+    /*
+    Grösseres Padding für die Sections bei grösserem Screen
+    */
+    .section-wrapper {
+        padding: 0 210px 210px 210px;
+    }
+
+    section a {
+        font-size: $fontsize-l;
+    }
+    section p {
+        margin-top: 3.4em;
+        padding-right: 360px;
+    }
+    
+    
+    /*
+    Anpassung Rezept Sektion Responsiv L Breakpoint
+    */
+    .section-receipe-text {
+        width: auto;
+        h3 {
+            font-size: $fontsize-l;
+        }
+        span {
+            font-size: $fontsize-m;
         }
     }
     footer {
@@ -877,30 +1023,6 @@ footer {
         div:last-of-type a {
            font-size: $fontsize-xs;
            line-height: 1.5;
-        }
-    }
-}
-
-@media screen and (min-width: $breakpoint-l) {
-    .section-wrapper {
-        padding: 0 210px 210px 210px;
-    }
-    section a {
-        font-size: $fontsize-l;
-    }
-    section p {
-        margin-top: 3.4em;
-        font-size: 1.25em;
-        padding-right: 360px;
-    }
-    .icon-link {
-        width: 380px;
-        height: 380px;
-        margin: 0;
-    }
-    .wrapper-icon-link {
-        div:nth-of-type(2) {
-            margin: 0 20px 0 20px;
         }
     }
 }

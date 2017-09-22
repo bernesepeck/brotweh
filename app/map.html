@@ -22,6 +22,7 @@
             <div class="navbar">
                 <a href="index.html"><img src="images/logo.svg" alt="logo"></a>
                 <button type="button" id="button-erfassen" class="button-new-entry" href="javascript:void(0);" onclick="toggleForm()"> + erfassen </button>
+                <button type="button" id="button-schliessen" class="button-close" href="javascript:void(0);" onclick="toggleForm()"> - schliessen </button>
                 <!-- Navigations Overlay für Mobile Phone -->
                 <nav id="navoverlay" class="navmobile">
                     <h2 class="title-menu">Menu</h2>
@@ -68,6 +69,7 @@
              <!-- Formular Erfassen -->
             <div id="formoverlay">
                 <form action="#" class="form-new-entry">
+                    <h2> Bäckerei erfassen </h2>
                     <input type="text" name="email" placeholder="Ihre E-Mailadresse">
                     <input type="text" name="Name" placeholder="Name von Bäckerei">
                     <input type="text" name="adress" placeholder="Adresse der Bäckerei">
@@ -108,26 +110,25 @@
                 if (!navoverlay.offsetWidth == 0) {
                     hamburger.className = "hamburger-close"
                     navoverlay.className = "hamburger-close"
-                    //navoverlay.style.width ="0%"
                 }
                 else {
                     hamburger.className = "hamburger-open"
                     navoverlay.className = "hamburger-open"
-                    //navoverlay.style.width = "100%"
                 }
             }
             function toggleForm() {
                 var formoverlay = document.getElementById("formoverlay");
                 var button = document.getElementById("button-erfassen");
+                var buttonclose = document.getElementById("button-schliessen");
                 if (!formoverlay.offsetWidth == 0) {
                     button.className = "form-close"
+                    buttonclose.className = "form-close"
                     formoverlay.className = "form-close"
-                    //navoverlay.style.width ="0%"
                 }
                 else {
                     button.className = "form-open"
+                    button.className = "form-open"
                     formoverlay.className = "form-open"
-                    //navoverlay.style.width = "100%"
                 }
             }
         </script>
