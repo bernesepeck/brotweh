@@ -168,10 +168,10 @@ Navigationsbar oben
         display: none;
 
         &.form-open {
-            display: none;
+            display: block;
         }
         &.form-close {
-            display: block;
+            display: none;
         }
     }
     /*

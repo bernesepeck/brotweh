@@ -125,9 +125,9 @@ Navigationsbar oben
     margin-left: auto;
     display: none; }
     .navbar #button-schliessen.form-open {
-      display: none; }
-    .navbar #button-schliessen.form-close {
       display: block; }
+    .navbar #button-schliessen.form-close {
+      display: none; }
   .navbar nav.navdesktop {
     display: none;
     align-self: center;
